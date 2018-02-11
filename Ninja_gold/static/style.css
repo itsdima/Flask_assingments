@@ -1,0 +1,7 @@
+.container {
+	width: 800px; 
+	height: 600px; 
+	text-align: center;
+	background-color: blue; 
+	/*background-image: url('..img/ninja.jpg');*/
+}
