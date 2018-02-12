@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Survey</title>
+	</head>
+	<body>
+		{% with messages = get_flashed_messages(with_categories=true) %}
+			{% if messages %}
+				{% for category, message in messages %}
+					<p class="{{ category }}"> {{ message }} </p>
+				{% endfor %}
+			{% endif %}
+		{% endwith %}
+		<div>
+			<form action="/result" method="POST">
+				<table>
+					<thead></thead>
+					<tbody>
+						<tr>
+							<td>
+								<label>First Name:</label>
+								<input type="text" name="firstname">
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<label>Last Name:</label>
+								<input type="text" name="lastname">
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<label>Email:</label>
+								<input type="text" name="email">
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<label>Date of Birth:</label>
+								<input type="text" name="DOB">
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<label>Password:</label>
+								<input type="text" name="password">
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<label>Confirm Password:</label>
+								<input type="text" name="confirm">
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<input type="submit" name="submit">
+			</form>
+		</div>
+	</body>
+</html>
