@@ -1,0 +1,11 @@
+
+.display {
+	border: 2px solid black;
+	border-collapse: collapse;
+}.name, .age, .since {
+	border-right: 2px solid black; 
+}.firstrow {
+	background-color: silver;
+}.display tr:nth-child(even) {
+	background-color: silver; 
+}
