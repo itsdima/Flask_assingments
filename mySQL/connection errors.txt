@@ -1,0 +1,4 @@
+keyerror: password (or any other key)
+fix: make sure to spellcheck the username and password and double check that you havent missed any required keys
+indentation error:
+fix: make sure everything is indented as a normal python file would, and check that if else statements are indented the same

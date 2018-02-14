@@ -37,4 +37,4 @@ JOIN film_category ON film_category.film_id = film.film_id
 JOIN category ON category.category_id = film_category.category_id
 JOIN film_actor ON film_actor.film_id = film.film_id
 JOIN actor ON actor.actor_id = film_actor.actor_id
-WHERE category.name = 'Action' and actor.first_name = 'Sandra' and actor.last_name = 'Kilmer';
+WHERE category.name = 'Action' and actor.first_name = 'Sandra' and actor.last_name = 'Kilmer';friendships
