@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Email</title>
+	</head>
+	<body>
+		{% if session['check'] == False %}
+			<div style="background-color: red; width: 150px;"><p>Email is not valid!</p></div>
+		{% endif %}
+		<form action="/process" method="post">
+			<p>Email Address: <input type="text" name="email"></p>
+			<input type="submit" name="submit">
+		</form>
+	</body>
+</html>

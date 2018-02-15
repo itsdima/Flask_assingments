@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Success</title>
+	</head>
+	<body>
+		{% if session['check'] == True %}
+			<div style="background-color: green; width: 250px"><p>The email address you entered ({{ session['email'] }}) is a VALID email address! Thank you!</div>
+			<div style="text-align: center;">
+				<a><h2 style="text-align: left;">Email Addresses Entered:</h2></a>
+				<table>
+					<tbody>
+						{% for email in all_emails %}
+							<tr>
+								<td>{{ email['email'] }}</td>
+								<td>{{ email['created_at'].strftime("%x") }}</td>
+								<td>{{ email['created_at'].strftime("%X") }}</td>
+							</tr>
+						{% endfor %}
+					</tbody>
+				</table>
+			</div>
+		{% endif %}
+	</body>
+</html>
