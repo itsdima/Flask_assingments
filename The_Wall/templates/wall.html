@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Forum</title>
+	</head>
+	<body>
+		<form action="/logout">
+			<input type="submit" name="logout" value="Log Out">
+		</form>
+		<div style="text-align: center;">
+			<h1>Welcome, {{users[0]['first_name']}}! </h1>
+			<div>
+				<p>Whats on your mind?</p>
+				<form action="/processpost" method="post" style="text-align: center;">
+					<textarea name="mypost" style="width: 250px; min-height: 100px;"></textarea>
+					<input type="submit" name="processpost">
+				</form>
+			</div>
+			{% for i in all_posts %}
+				<div style="width: 300px; min-height: 100px">
+					<h5>{{ i['name'] }} {{ i['created_at'] }}</h5>
+					<p>{{ i['post'] }}</p>
+					{% for x in all_comments %}
+						{% if x['posts_id'] == i['id'] %}
+							<div>
+								<h6>{{ x['name'] }} {{ x['created_at'] }}</h6>
+								<p style="font-size: 12px">{{ x['comment'] }}</p>
+							</div>
+						{% endif %}
+					{% endfor %}
+					<form action="/processcomment" method="post">
+						<textarea style="width: 200px; min-height: 50px;" name="mycomment"></textarea>
+						<input type="hidden" name="postid" value="{{ i['id'] }}">
+						<input type="submit" name="processcomment">
+					</form>
+				</div>
+			{% endfor %}
+		</div>
+	</body>
+</html>
